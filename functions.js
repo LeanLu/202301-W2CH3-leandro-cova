@@ -20,9 +20,25 @@ export const pop = (array) => {
 
   if (newLength === 0) return;
 
-  const newElement = array[newLength - 1];
+  const deleteElement = array[newLength - 1];
 
   array.length = newLength - 1;
 
-  return newElement;
+  return deleteElement;
+};
+
+export const shift = (array) => {
+  const newLength = length(array);
+
+  if (newLength === 0) return;
+
+  const deleteElement = array[0];
+
+  for (let i = 1; i <= newLength - 1; i++) {
+    array[i - 1] = array[i];
+  }
+
+  array.length = newLength - 1;
+
+  return deleteElement;
 };
