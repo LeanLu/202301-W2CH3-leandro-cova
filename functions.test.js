@@ -1,5 +1,4 @@
-import { length } from './functions.js';
-import { push } from './functions.js';
+import { length, push, pop } from './functions.js';
 
 describe('Given length function', () => {
   describe('When we have an Array', () => {
@@ -19,6 +18,17 @@ describe('Given push function', () => {
       const element = 'Leandro';
       const expected = 6;
       const result = push(arrayTest, element);
+      expect(result).toBe(expected);
+    });
+  });
+});
+
+describe.only('Given pop function', () => {
+  describe('When we have an Array with n-elements', () => {
+    test('Then the last element will be deleted will be returned', () => {
+      const arrayTest = [1, 'pepe', true, 0, 'Cova'];
+      const expected = 'Cova';
+      const result = pop(arrayTest);
       expect(result).toBe(expected);
     });
   });

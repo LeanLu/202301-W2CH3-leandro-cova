@@ -14,3 +14,15 @@ export const push = (array, element) => {
 
   return newLength + 1;
 };
+
+export const pop = (array) => {
+  const newLength = length(array);
+
+  if (newLength === 0) return;
+
+  const newElement = array[newLength - 1];
+
+  array.length = newLength - 1;
+
+  return newElement;
+};
