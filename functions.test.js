@@ -1,4 +1,4 @@
-import { length, push, pop, shift } from './functions.js';
+import { length, push, pop, shift, unshift } from './functions.js';
 
 describe('Given length function', () => {
   describe('When we have an Array', () => {
@@ -34,12 +34,24 @@ describe('Given pop function', () => {
   });
 });
 
-describe.only('Given shift function', () => {
+describe('Given shift function', () => {
   describe('When we have an Array with n-elements', () => {
     test('Then the first element will be deleted will be returned', () => {
       const arrayTest = [1, 'pepe', true, 0, 'Cova'];
       const expected = 1;
       const result = shift(arrayTest);
+      expect(result).toBe(expected);
+    });
+  });
+});
+
+describe('Given unshift function', () => {
+  describe('When we have an Array with n-elements', () => {
+    test('Then n-element will be added to the beginning of the Array', () => {
+      const arrayTest = [1, 'pepe', true, 0, 'Cova'];
+      const element = 'Leandro';
+      const expected = 6;
+      const result = unshift(arrayTest, element);
       expect(result).toBe(expected);
     });
   });
