@@ -7,3 +7,10 @@ export const length = (array) => {
 
   return counter;
 };
+
+export const push = (array, element) => {
+  const newLength = length(array);
+  array[newLength] = element;
+
+  return newLength + 1;
+};
