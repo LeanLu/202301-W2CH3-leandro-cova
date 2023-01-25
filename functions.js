@@ -42,3 +42,19 @@ export const shift = (array) => {
 
   return deleteElement;
 };
+
+export const unshift = (array, element) => {
+  let newLength = length(array);
+
+  if (newLength === 0) return;
+
+  for (let i = newLength; i >= 1; i--) {
+    array[i] = array[i - 1];
+  }
+
+  array[0] = element;
+
+  newLength += 1;
+
+  return newLength;
+};
