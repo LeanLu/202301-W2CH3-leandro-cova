@@ -59,17 +59,41 @@ export const unshift = (array, element) => {
   return newLength;
 };
 
-export const some = (array, condition) => {
+export const some = (array) => {
   const newLength = length(array);
 
   if (newLength === 0) return;
 
   let result = false;
 
-  for (let i = 0; i < newLength; i++) {
-    if (array[i] === condition) {
+  const func = (elem) => {
+    if (elem % 2 === 0) {
       result = true;
     }
+  };
+
+  for (let i = 0; i < newLength; i++) {
+    func(array[i]);
+  }
+
+  return result;
+};
+
+export const every = (array) => {
+  const newLength = length(array);
+
+  if (newLength === 0) return;
+
+  let result = true;
+
+  const func = (elem) => {
+    if (elem > 40) {
+      result = false;
+    }
+  };
+
+  for (let i = 0; i < newLength; i++) {
+    func(array[i]);
   }
 
   return result;
